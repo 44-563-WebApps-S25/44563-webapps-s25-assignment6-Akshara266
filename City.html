@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>City game by Jhansi Akshara</title>
+    </head>
+<body>
+<h2>City game by Jhansi Akshara Sanagala</h2>
+<form id="cityForm">
+    <label for="secretCity">Where in the world: </label>
+    <input type="password" id="secretCity" value="San Diego" disabled>
+    <br>
+    <label for="guessCity">Guess the city: </label>
+    <input type="text" id="guessCity">
+    <br>
+    <button type="button" onclick="checkCity()">Check the guess</button>
+</form>
+
+
+<div id="result"></div>
+
+<script>
+    let oops = 0;
+    let found = 0;
+
+    function checkCity() {
+        // Get values from the input elements
+        const secretCity = document.getElementById("secretCity").value;
+        const guessCity = document.getElementById("guessCity").value;
+
+        // Compare the values
+        if (secretCity === guessCity) {
+            found++;
+            alert("GotCha");
+        } else {
+            oops++;
+            alert("Awe");
+        }
+
+        // Update the result display
+        document.getElementById("result").innerHTML = Found: ${found} | Oops: ${oops};
+    }
+</script>
+</body>
+</html>
