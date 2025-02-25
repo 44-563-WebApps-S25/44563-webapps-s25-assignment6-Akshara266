@@ -2,6 +2,17 @@
 <html>
  <head>
     <title>City game by Jhansi Akshara</title>
+    <style>
+        #image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+        }
+    </style>
  </head>
 <body>
 
@@ -37,6 +48,33 @@
             }
             
             document.getElementById("result").innerHTML = `Oops: ${oops} | Found: ${found}`;
+        }
+    </script>
+    
+    <!-- Part 4: Image Change -->
+    <h2>Click the image to change it</h2>
+    <div id="image-container">
+        <img id="petImage" src="pet1.jpg" onclick="updatePic()" alt="Pet Image">
+    </div>
+
+    <script>
+        let usePic = 1;
+        function updatePic() {
+            let img = document.getElementById("petImage");
+            switch (usePic) {
+                case 1:
+                    img.src = "pet2.jpg";
+                    usePic = 2;
+                    break;
+                case 2:
+                    img.src = "pet3.jpg";
+                    usePic = 3;
+                    break;
+                default:
+                    img.src = "pet1.jpg";
+                    usePic = 1;
+                    break;
+            }
         }
     </script>
 </body>
