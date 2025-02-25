@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jhansi Akshara Plans Dinner</title>
+</head>
+<body>
+    <h1>Jhansi Akshara Sanagala - Plans Dinner</h1>
+
+    <form>
+        <input type="checkbox" id="wine" value="True"> Serve Wine<br>
+        <input type="checkbox" id="outside" value="True"> Eat Outside<br>
+        <input type="checkbox" id="candles" value="False"> Light Candles<br>
+    </form>
+    
+    <button onclick="choices()">Dinner Choices</button>
+    <div id="dinnerResult"></div>
+    
+    <h2>Update Dinner</h2>
+    <label for="mainDish">Enter main dish:</label>
+    <input type="text" id="mainDish" value="Butter Chicken"><br><br>
+    
+    <label for="dessert">Enter dessert:</label>
+    <input type="text" id="dessert"><br><br>
+    
+    <button onclick="updateDinner()">Update the Dinner</button>
+    
+    <script>
+        let my_dinner = {};
+
+        function choices() {
+            my_dinner = {};
+            my_dinner.wine = document.getElementById("wine").checked;
+            my_dinner.outside = document.getElementById("outside").checked;
+            my_dinner.candles = document.getElementById("candles").checked;
+            document.getElementById("dinnerResult").innerHTML = JSON.stringify(my_dinner);
+        }
+
+        function updateDinner() {
+            my_dinner.main = document.getElementById("mainDish").value;
+            my_dinner.dessert = document.getElementById("dessert").value;
+            document.getElementById("dinnerResult").innerHTML = JSON.stringify(my_dinner);
+        }
+    </script>
+</body>
+</html>
